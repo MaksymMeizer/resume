@@ -6,23 +6,24 @@
 <title>Maksym – Window repair technician</title>
 
 <style>
+* {box-sizing: border-box;}
+html, body {overflow-x: hidden}
 :root{--blue:#1f4fd8}
 body{margin:0;font-family:system-ui;background:#f3f5f9}
-.container{max-width:1000px;margin:auto;padding:20px}
+.container{max-width:1000px;width:100%;margin:0 auto;padding:20px;}
 .card{background:#fff;border-radius:15px;padding:25px;margin-bottom:20px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
 h1,h2{color:var(--blue)}
 .profile{display:grid;grid-template-columns:1fr 2fr;gap:20px}
 .profile img{width:100%;border-radius:12px}
 .btn{background:var(--blue);color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:10px}
-.lang{float:right}
+.lang{display:flex;justify-content:flex-end;margin-bottom:15px;}
 .lang button{margin-left:5px;padding:5px 10px;border:none;border-radius:5px;cursor:pointer}
 .lang .active{background:var(--blue);color:white}
 .services li{padding:8px 0;border-bottom:1px solid #eee}
 .stars span{font-size:26px;cursor:pointer;color:#ccc}
 .stars .active{color:gold}
 .review{background:#f6f8ff;padding:12px;border-radius:10px;margin-top:10px}
-.whatsapp{position:fixed;right:20px;bottom:20px;background:#25d366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none}
-@media(max-width:800px){.profile{grid-template-columns:1fr}}
+.whatsapp{position:fixed;right:20px;bottom:20px;background:#25d366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;max-width:calc(100% - 40px);}
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -30,6 +31,8 @@ h1,h2{color:var(--blue)}
 }
 .gallery img{
   width:100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius:10px;
 }
 </style>
@@ -154,9 +157,6 @@ function loadReviews(){
     "⭐ "+(reviews.length?(sum/reviews.length).toFixed(1):"5.0");
 }
 loadReviews();
-
-
-</script>
-
+</script
 </body>
 </html>
