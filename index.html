@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maksym – Window repair technician</title>
+
+<style>
+:root{--blue:#1f4fd8}
+body{margin:0;font-family:system-ui;background:#f3f5f9}
+.container{max-width:1000px;margin:auto;padding:20px}
+.card{background:#fff;border-radius:15px;padding:25px;margin-bottom:20px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
+h1,h2{color:var(--blue)}
+.profile{display:grid;grid-template-columns:1fr 2fr;gap:20px}
+.profile img{width:100%;border-radius:12px}
+.btn{background:var(--blue);color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:10px}
+.lang{float:right}
+.lang button{margin-left:5px;padding:5px 10px;border:none;border-radius:5px;cursor:pointer}
+.lang .active{background:var(--blue);color:white}
+.services li{padding:8px 0;border-bottom:1px solid #eee}
+.stars span{font-size:26px;cursor:pointer;color:#ccc}
+.stars .active{color:gold}
+.review{background:#f6f8ff;padding:12px;border-radius:10px;margin-top:10px}
+.whatsapp{position:fixed;right:20px;bottom:20px;background:#25d366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none}
+@media(max-width:800px){.profile{grid-template-columns:1fr}}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+.gallery img{
+  width:100%;
+  border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="lang">
+  <button id="ua" class="active">UA</button>
+  <button id="pl">PL</button>
+</div>
+
+<div class="card profile">
+  <img src="photo_2024-07-27_15-40-09.jpg">
+  <div>
+    <h1 data-ua="Максим – Майстер з ремонту вікон" data-pl="Maksym – Fachowiec z naprawy okien">Maksym – Майстер з ремонту вікон</h1>
+    <p data-ua="📍 Варшава" data-pl="📍 Warszawa">📍 Варшава</p>
+    <p data-ua="🛠 1.5 року досвіду" data-pl="🛠 1.5 roku doświadczenia">🛠 1.5 року досвіду</p>
+    <p data-ua="ПВХ та деревʼяні вікна" data-pl="Okna PVC i drewniane">ПВХ та деревʼяні вікна</p>
+    <a href="tel:+48576988871" class="btn" data-ua="📞 Зателефонувати" data-pl="📞 Zadzwoń">📞 Зателефонувати</a>
+  </div>
+</div>
+
+<div class="card">
+  <h2 data-ua="Послуги" data-pl="Usługi">Послуги</h2>
+  <ul class="services">
+    <li data-ua="Безкоштовна діагностика" data-pl="Bezpłatna diagnostyka">Безкоштовна діагностика</li>
+    <li data-ua="Регулювання вікон" data-pl="Regulacja okien">Регулювання вікон</li>
+    <li data-ua="Заміна ущільнювачів" data-pl="Wymiana uszczelek">Заміна ущільнювачів</li>
+    <li data-ua="Ремонт фурнітури" data-pl="Naprawa okuć">Ремонт фурнітури</li>
+    <li data-ua="Заміна склопакетів" data-pl="Wymiana szyb">Заміна склопакетів</li>
+  </ul>
+</div>
+<div class="card">
+  <h2 data-ua="Про майстра" data-pl="O mistrzu">Про майстра</h2>
+
+  <p data-ua="Професійний майстер з ремонту вікон. Виконую якісний ремонт, регулювання та обслуговування віконних конструкцій будь-якої складності. Працюю швидко, акуратно та з гарантією на виконані роботи.."
+     data-pl="Profesjonalny mistrz w naprawie okien. Wykonuję wysokiej jakości naprawy, regulacje i konserwację konstrukcji okiennych o dowolnym stopniu skomplikowania. Pracuję szybko, dokładnie i z gwarancją na wykonaną pracę.">
+     Професійний майстер з ремонту вікон. Виконую якісний ремонт, регулювання та обслуговування віконних конструкцій будь-якої складності. Працюю швидко, акуратно та з гарантією на виконані роботи.
+  </p>
+
+  <p data-ua="Гарантія на всі види робіт."
+     data-pl="Gwarancja na wszystkie rodzaje prac.">
+     Гарантія на всі види робіт.
+  </p>
+</div>
+
+<div class="card">
+  <h2 data-ua="Відгуки" data-pl="Opinie">Відгуки</h2>
+  <div id="rating">⭐ 5.0</div>
+  <div id="reviews"></div>
+
+  <input id="name" placeholder="Імʼя / Imię"><br><br>
+  <div class="stars" id="stars">
+    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+  </div><br>
+  <textarea id="text" placeholder="Відгук / Opinia"></textarea><br>
+  <button class="btn" onclick="addReview()" data-ua="Додати" data-pl="Dodaj">Додати</button>
+</div>
+<div class="card">
+  <h2 data-ua="Фото робіт" data-pl="Zdjęcia prac">Фото робіт</h2>
+
+  <div class="gallery">
+    <img src="photo_2026-02-01_18-20-38.jpg">
+    <img src="photo_2026-02-01_18-18-26.jpg">
+    <img src="photo_2024-10-06_10-40-36.jpg">
+  </div>
+</div>
+</div>
+
+<a href="https://wa.me/48576988871" class="whatsapp">WhatsApp</a>
+
+<script>
+let lang="ua";
+const uaBtn=document.getElementById("ua");
+const plBtn=document.getElementById("pl");
+
+function setLang(l){
+  lang=l;
+  document.querySelectorAll("[data-ua]").forEach(el=>{
+    el.innerText = el.dataset[l];
+  });
+  uaBtn.classList.toggle("active",l==="ua");
+  plBtn.classList.toggle("active",l==="pl");
+}
+uaBtn.onclick=()=>setLang("ua");
+plBtn.onclick=()=>setLang("pl");
+
+// Reviews
+let rating=0;
+document.querySelectorAll('#stars span').forEach((s,i)=>{
+  s.onclick=()=>{
+    rating=i+1;
+    document.querySelectorAll('#stars span').forEach((x,j)=>{
+      x.classList.toggle('active',j<rating);
+    });
+  }
+});
+
+function addReview(){
+  let name = document.getElementById("name").value;
+  let text = document.getElementById("text").value;
+  if(!name||!text||!rating)return alert("Заповніть все");
+
+  let reviews=JSON.parse(localStorage.getItem("reviews")||"[]");
+  reviews.push({name,text,rating});
+  localStorage.setItem("reviews",JSON.stringify(reviews));
+  loadReviews();
+}
+
+function loadReviews(){
+  let reviews=JSON.parse(localStorage.getItem("reviews")||"[]");
+  let html="";
+  let sum=0;
+  reviews.forEach(r=>{
+    sum+=r.rating;
+    html+=`<div class="review"><b>${r.name}</b><br>${"★".repeat(r.rating)}<br>${r.text}</div>`;
+  });
+  document.getElementById("reviews").innerHTML=html;
+  document.getElementById("rating").innerText=
+    "⭐ "+(reviews.length?(sum/reviews.length).toFixed(1):"5.0");
+}
+loadReviews();
+
+
+</script>
+
+</body>
+</html>
