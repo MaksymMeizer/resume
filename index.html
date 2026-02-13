@@ -15,7 +15,7 @@ body{margin:0;font-family:system-ui;background:#f3f5f9}
 h1,h2{color:var(--blue)}
 .profile{
   display:grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 150px 1fr;
   align-items:center;
   gap:40px;
 }
@@ -519,7 +519,7 @@ body{
 
 }
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
 
   .profile{
     grid-template-columns: 1fr;
@@ -542,7 +542,7 @@ body{
   }
 }
 
-  #quizStep{
+#quizStep{
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -554,6 +554,16 @@ body{
   max-width:420px;
 }
 
+.lazy-img{
+  opacity:0;
+  transform:translateY(10px);
+  transition:1.0s ease;
+}
+
+.lazy-img.loaded{
+  opacity:1;
+  transform:none;
+}
 </style>
 </head>
 
@@ -567,7 +577,8 @@ body{
 </div>
 
 <div class="card profile">
-  <img src="photo_2024-07-27_15-40-09.jpg">
+<img data-src="photo_2024-07-27_15-40-09.jpg" class="lazy-img">
+
   <div>
     <h1 data-ua="Максим – Майстер з ремонту вікон" data-pl="Maksym – Fachowiec z naprawy okien">Maksym – Майстер з ремонту вікон</h1>
     <p data-ua="📍 Варшава" data-pl="📍 Warszawa">📍 Варшава</p>
@@ -653,7 +664,8 @@ body{
     </div>
   </div>
   <div class="hero-img">
-    <img src="vikna.jpg">
+    <img data-src="vikna.jpg" class="lazy-img">
+
   </div>
 
 </div>
@@ -814,15 +826,15 @@ body{
 
   <div class="gallery">
     <div class="photo-frame">
-      <img src="photo_2026-02-01_18-20-38.jpg">
+    <img data-src="photo_2026-02-01_18-20-38.jpg" class="lazy-img">
     </div>
 
     <div class="photo-frame">
-      <img src="photo_2026-02-01_18-18-26.jpg">
+    <img data-src="photo_2026-02-01_18-18-26.jpg" class="lazy-img">
     </div>
 
     <div class="photo-frame">
-      <img src="photo_2024-10-06_10-40-36.jpg">
+    <img data-src="photo_2024-10-06_10-40-36.jpg" class="lazy-img">
     </div>
   </div>
 </div>
@@ -1093,6 +1105,21 @@ window.onclick = function(e){
   }
 }
 
+const lazyImages = document.querySelectorAll(".lazy-img");
+
+const observer = new IntersectionObserver((entries, obs)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.onload = () => img.classList.add("loaded");
+      obs.unobserve(img);
+    }
+  });
+},{rootMargin:"200px"});
+
+lazyImages.forEach(img=>observer.observe(img));
+
 loadReviews();
 </script>
 <div id="contactModal" class="modal">
@@ -1125,10 +1152,5 @@ loadReviews();
 
   </div>
 </div>
-
 </body>
 </html>
-
-
-
-
