@@ -13,16 +13,120 @@ body{margin:0;font-family:system-ui;background:#f3f5f9}
 .container{max-width:1000px;width:100%;margin:0 auto;padding:20px;}
 .card{background:#fff;border-radius:15px;padding:25px;margin-bottom:20px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
 h1,h2{color:var(--blue)}
-.profile{display:grid;grid-template-columns:1fr 2fr;gap:20px}
+.profile{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  align-items:center;
+  gap:40px;
+}
 .profile img{width:100%;border-radius:12px}
 .btn{background:var(--blue);color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:10px}
 .lang{display:flex;justify-content:flex-end;margin-bottom:15px;}
 .lang button{margin-left:5px;padding:5px 10px;border:none;border-radius:5px;cursor:pointer}
 .lang .active{background:var(--blue);color:white}
 .services li{padding:8px 0;border-bottom:1px solid #eee}
-.stars span{font-size:26px;cursor:pointer;color:#ccc}
-.stars .active{color:gold}
-.review{background:#f6f8ff;padding:12px;border-radius:10px;margin-top:10px}
+
+
+.review-avatar{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:var(--blue);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:18px;
+  flex-shrink:0;
+}
+
+.review-content{
+  flex:1;
+}
+
+.review-content b{
+  display:block;
+  margin-bottom:5px;
+}
+
+.review-stars{
+  color:gold;
+  margin-bottom:6px;
+}
+
+.reviews-summary{
+  display:flex;
+  gap:40px;
+  margin:20px 0 30px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.reviews-score{
+  text-align:center;
+  min-width:120px;
+}
+
+#ratingNumber{
+  font-size:36px;
+  font-weight:700;
+}
+
+.reviews-stars{
+  color:gold;
+  font-size:18px;
+  margin:5px 0;
+}
+
+.reviews-bars{
+  flex:1;
+}
+
+.bar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:6px 0;
+  font-size:14px;
+}
+
+.bar-line{
+  flex:1;
+  height:8px;
+  background:#eee;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+.bar-line div{
+  height:100%;
+  background:var(--blue);
+  width:0%;
+  transition:.3s;
+}
+
+/* Картки відгуків */
+.review:last-child{
+  border-bottom:none;
+}
+
+.review-verified{
+  font-size:12px;
+  color:#4caf50;
+  margin-left:8px;
+}
+
+.stars span{
+  font-size:28px;
+  cursor:pointer;
+  color:#ddd;
+  transition:.2s;
+}
+
+.stars .active{
+  color:gold;
+}
 .whatsapp{position:fixed;right:20px;bottom:20px;background:#25d366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;max-width:calc(100% - 40px);}
 .gallery{
   display:grid;
@@ -35,8 +139,346 @@ h1,h2{color:var(--blue)}
   object-fit: cover;
   border-radius:10px;
 }
+.quiz-btn{
+  display:block;
+  width:100%;
+  margin:8px 0;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#f1f4ff;
+  cursor:pointer;
+  font-weight:bold;
+}
+.quiz-btn:hover{
+  background:#dfe6ff;
+}
+.quiz-input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  margin-top:10px;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap:40px;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.hero h1{
+  font-size:38px;
+  line-height:1.2;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#666;
+  margin-bottom:25px;
+}
+
+.service-list{
+  background:#fff;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.service-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.service-item:last-child{
+  border-bottom:none;
+}
+
+.order-btn{
+  color:var(--blue);
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.hero-img{
+  border:6px solid #2ea3ff;
+  border-radius:30px;
+  padding:8px;
+}
+
+.hero-img img{
+  width:100%;
+  border-radius:20px;
+  display:block;
+}
+
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+}
+
+.consult{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  background:#f6f8ff;
+  padding:30px;
+  border-radius:15px;
+  margin:30px 0;
+}
+
+.consult-text{
+  max-width:600px;
+}
+
+.consult-text h3{
+  margin:0 0 10px;
+  font-size:20px;
+  font-weight:600;
+}
+
+.consult-text p{
+  margin:0;
+  color:#666;
+}
+
+
+@media(max-width:768px){
+  .consult{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.4);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.modal-content{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  width:90%;
+  max-width:400px;
+  text-align:center;
+  position:relative;
+  animation:fadeIn .2s ease;
+}
+
+.modal-btn{
+  display:block;
+  margin:15px 0;
+  padding:15px;
+  background:var(--blue);
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.modal-btn:hover{
+  opacity:.9;
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+@keyframes fadeIn{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.btn-primary{
+  display:inline-block;
+  background:var(--blue);
+  color:white;
+  padding:14px 28px;
+  border-radius:12px;
+  font-weight:600;
+  font-size:15px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(31,79,216,.25);
+  transition:all .2s ease;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 22px rgba(31,79,216,.35);
+}
+
+.btn-primary:active{
+  transform:translateY(0);
+  box-shadow:0 6px 12px rgba(31,79,216,.2);
+}
+
+.review-form{
+  background:linear-gradient(135deg,#f5f7ff,#ffffff);
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  margin-bottom:30px;
+}
+
+.review-form h3{
+  margin-bottom:20px;
+  font-size:22px;
+}
+
+.review-form-grid{
+  display:grid;
+  gap:15px;
+}
+
+.review-form input,
+.review-form textarea{
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-size:15px;
+  resize:none;
+  transition:.2s;
+}
+
+.review-form input:focus,
+.review-form textarea:focus{
+  border-color:var(--blue);
+  outline:none;
+  box-shadow:0 0 0 3px rgba(31,79,216,.15);
+}
+
+.stars{
+  display:flex;
+  gap:10px;
+  font-size:34px;
+  cursor:pointer;
+}
+
+.stars span{
+  color:#ddd;
+  transition:.2s;
+}
+
+.stars span.active{
+  color:gold;
+  transform:scale(1.1);
+}
+
+.review-success{
+  background:#e8fff2;
+  border-radius:12px;
+  padding:15px;
+  margin-top:15px;
+  color:#0b7a40;
+  font-weight:600;
+  animation:fade .4s ease;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
+.reviews-wrapper{
+  position:relative;
+  width:100%;
+  padding:0 50px;
+}
+
+
+.reviews-viewport{
+  overflow:hidden;
+  width:100%;
+}
+
+.reviews-track{
+  display:flex;
+  gap:20px;
+  transition:.5s ease;
+}
+
+.review-card{
+  min-width:30%;
+  flex:0 0 30%;
+}
+
+.slider-btn{
+  position:absolute;
+  top:40%;
+  transform:translateY(-50%);
+  background:#1f4fd8;
+  color:white;
+  border:none;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:26px;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+  z-index:5;
+}
+
+.slider-btn.left{left:4px}
+.slider-btn.right{right:4px}
+
+
+@media(max-width:800px){
+  .review-card{min-width:90%}
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
+
+.photo-frame{
+  border:6px solid #2ea3ff;
+  border-radius:25px;
+  padding:8px;
+  background:white;
+  transition:.3s;
+}
+
+.photo-frame:hover{
+  transform: translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.photo-frame img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  display:block;
+}
+
+
 </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -52,21 +494,94 @@ h1,h2{color:var(--blue)}
     <h1 data-ua="Максим – Майстер з ремонту вікон" data-pl="Maksym – Fachowiec z naprawy okien">Maksym – Майстер з ремонту вікон</h1>
     <p data-ua="📍 Варшава" data-pl="📍 Warszawa">📍 Варшава</p>
     <p data-ua="🛠 1.5 року досвіду" data-pl="🛠 1.5 roku doświadczenia">🛠 1.5 року досвіду</p>
-    <p data-ua="ПВХ та деревʼяні вікна" data-pl="Okna PVC i drewniane">ПВХ та деревʼяні вікна</p>
-    <a href="tel:+48576988871" class="btn" data-ua="📞 Зателефонувати" data-pl="📞 Zadzwoń">📞 Зателефонувати</a>
+    <p data-ua="🪟ПВХ та деревʼяні вікна" data-pl="🪟Okna PVC i drewniane">🪟ПВХ та деревʼяні вікна</p>
+    <a href="tel:+48576988871" class="btn-primary" data-ua="📞 Зателефонувати" data-pl="📞 Zadzwoń">📞 Зателефонувати</a>
   </div>
 </div>
 
-<div class="card">
-  <h2 data-ua="Послуги" data-pl="Usługi">Послуги</h2>
-  <ul class="services">
-    <li data-ua="Безкоштовна діагностика" data-pl="Bezpłatna diagnostyka">Безкоштовна діагностика</li>
-    <li data-ua="Регулювання вікон" data-pl="Regulacja okien">Регулювання вікон</li>
-    <li data-ua="Заміна ущільнювачів" data-pl="Wymiana uszczelek">Заміна ущільнювачів</li>
-    <li data-ua="Ремонт фурнітури" data-pl="Naprawa okuć">Ремонт фурнітури</li>
-    <li data-ua="Заміна склопакетів" data-pl="Wymiana szyb">Заміна склопакетів</li>
-  </ul>
+<div class="card hero">
+
+  <div>
+    <h1 
+      data-ua="Ремонтуємо 90% віконних поломок у день звернення"
+      data-pl="Naprawiamy 90% usterek okien w dniu zgłoszenia">
+      Ремонтуємо 90% віконних поломок у день звернення
+    </h1>
+
+    <p
+      data-ua="Протягом години після заявки я звʼяжусь з вами для уточнення деталей і приїду на об'єкт."
+      data-pl="W ciągu godziny od zgłoszenia skontaktuję się z Tobą w celu ustalenia szczegółów i przyjadę na miejsce.">
+      Протягом години після заявки я звʼяжусь з вами для уточнення деталей і приїду на об'єкт.
+    </p>
+
+    <div class="service-list">
+
+      <div class="service-item">
+        <span 
+          data-ua="Заміна склопакета (20 хв)"
+          data-pl="Wymiana pakietu szybowego (20 min)">
+          Заміна склопакета (20 хв)
+        </span>
+        <span class="order-btn"
+          data-ua="Замовити"
+          data-pl="Zamów"
+          onclick="document.getElementById('quizCard').scrollIntoView({behavior:'smooth'})">
+          Замовити
+        </span>
+      </div>
+
+      <div class="service-item">
+        <span 
+          data-ua="Регулювання вікон (5-30 хв)"
+          data-pl="Regulacja okien (5-30 min)">
+          Регулювання вікон (5-30 хв)
+        </span>
+        <span class="order-btn"
+          data-ua="Замовити"
+          data-pl="Zamów"
+          onclick="document.getElementById('quizCard').scrollIntoView({behavior:'smooth'})">
+          Замовити
+        </span>
+      </div>
+
+      <div class="service-item">
+        <span 
+          data-ua="Заміна ущільнювача (30-60 хв)"
+          data-pl="Wymiana uszczelki (30-60 min)">
+          Заміна ущільнювача (30-60 хв)
+        </span>
+        <span class="order-btn"
+          data-ua="Замовити"
+          data-pl="Zamów"
+          onclick="document.getElementById('quizCard').scrollIntoView({behavior:'smooth'})">
+          Замовити
+        </span>
+      </div>
+
+      <div class="service-item">
+        <span 
+          data-ua="Заміна ручок (5 хв)"
+          data-pl="Wymiana klamek (5 min)">
+          Заміна ручок (5 хв)
+        </span>
+        <span class="order-btn"
+          data-ua="Замовити"
+          data-pl="Zamów"
+          onclick="document.getElementById('quizCard').scrollIntoView({behavior:'smooth'})">
+          Замовити
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+</span>
+  <div class="hero-img">
+    <img src="vikna.jpg">
+  </div>
+
 </div>
+
 <div class="card">
   <h2 data-ua="Про майстра" data-pl="O mistrzu">Про майстра</h2>
 
@@ -81,28 +596,161 @@ h1,h2{color:var(--blue)}
   </p>
 </div>
 
+<!--Чому обирають мене-->
 <div class="card">
-  <h2 data-ua="Відгуки" data-pl="Opinie">Відгуки</h2>
-  <div id="rating">⭐ 5.0</div>
-  <div id="reviews"></div>
+  <h2 
+    data-ua="Чому обирають мене" 
+    data-pl="Dlaczego warto mnie wybrać">
+    Чому обирають мене
+  </h2>
 
-  <input id="name" placeholder="Імʼя / Imię"><br><br>
-  <div class="stars" id="stars">
-    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-  </div><br>
-  <textarea id="text" placeholder="Відгук / Opinia"></textarea><br>
-  <button class="btn" onclick="addReview()" data-ua="Додати" data-pl="Dodaj">Додати</button>
+  <ul>
+    <li 
+      data-ua="✔ 1000+ виконаних замовлень"
+      data-pl="✔ 1000+ zrealizowanych zleceń">
+      ✔ 1000+ виконаних замовлень
+    </li>
+
+    <li 
+      data-ua="✔ Виїзд у день звернення"
+      data-pl="✔ Dojazd w dniu zgłoszenia">
+      ✔ Виїзд у день звернення
+    </li>
+
+    <li 
+      data-ua="✔ Гарантія 12 місяців"
+      data-pl="✔ Gwarancja 12 miesięcy">
+      ✔ Гарантія 12 місяців
+    </li>
+  </ul>
 </div>
+
+
+<div class="card">
+  <h2 data-ua="Послуги" data-pl="Usługi">Послуги</h2>
+  <ul class="services">
+    <li data-ua="Безкоштовна діагностика" data-pl="Bezpłatna diagnostyka">Безкоштовна діагностика</li>
+    <li data-ua="Регулювання вікон" data-pl="Regulacja okien">Регулювання вікон</li>
+    <li data-ua="Заміна ущільнювачів" data-pl="Wymiana uszczelek">Заміна ущільнювачів</li>
+    <li data-ua="Ремонт фурнітури" data-pl="Naprawa okuć">Ремонт фурнітури</li>
+    <li data-ua="Заміна склопакетів" data-pl="Wymiana szyb">Заміна склопакетів</li>
+  </ul>
+</div>
+
+<!--Опитування-->
+<div class="card" id="quizCard">
+  <h2 data-ua="Замовити безкоштовний візит майстра" data-pl="Zarezerwuj bezpłatną wizytę">Замовити безкоштовний візит майстра</h2>
+  <ul class="services">
+  <div id="quizStep"></div>
+</div>
+
+<!--Консультація-->
+<div class="consult">
+
+  <div class="consult-text">
+    <h3
+      data-ua="Чи не знайшли свою проблему?"
+      data-pl="Nie znalazłeś swojego problemu?">
+      Чи не знайшли свою проблему?
+    </h3>
+
+    <p
+      data-ua="Є можливівсть консультації, безпосредньо з майстром"
+      data-pl="Istnieje możliwość konsultacji bezpośrednio z mistrzem">
+      Є можливівсть консультації, безпосредньо з майстром
+    </p>
+  </div>
+
+<button class="btn-primary"
+        onclick="openContactModal()"
+        data-ua="Безкоштовна консультація"
+        data-pl="Bezpłatna konsultacja">
+  Безкоштовна консультація
+</button>
+</div>
+
+<!--Відгуки-->
+<div class="card">
+
+  <h2 data-ua="Відгуки клієнтів" data-pl="Opinie klientów">
+    Відгуки клієнтів
+  </h2>
+
+  <div class="reviews-summary">
+
+    <div class="reviews-score">
+      <div id="ratingNumber">5.0</div>
+      <div id="ratingStars" class="reviews-stars"></div>
+
+      <div id="reviewsCount">0</div>
+    </div>
+
+    <div class="reviews-bars">
+      <div class="bar"><span>5 ★</span><div class="bar-line"><div id="bar5"></div></div></div>
+      <div class="bar"><span>4 ★</span><div class="bar-line"><div id="bar4"></div></div></div>
+      <div class="bar"><span>3 ★</span><div class="bar-line"><div id="bar3"></div></div></div>
+      <div class="bar"><span>2 ★</span><div class="bar-line"><div id="bar2"></div></div></div>
+      <div class="bar"><span>1 ★</span><div class="bar-line"><div id="bar1"></div></div></div>
+    </div>
+
+  </div>
+  <div class="reviews-wrapper">
+  <button class="slider-btn left" onclick="prevReview()">‹</button>
+
+  <div class="reviews-viewport">
+    <div id="reviewsList" class="reviews-track"></div>
+  </div>
+
+  <button class="slider-btn right" onclick="nextReview()">›</button>
+</div>
+
+</div>
+<div class="review-form">
+
+  <h3 data-ua="Залишити відгук" data-pl="Dodaj opinię">Залишити відгук</h3>
+
+  <div class="review-form-grid">
+
+    <input id="name" placeholder="Ваше імʼя">
+
+    <div id="stars" class="stars">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+
+    <textarea id="text" placeholder="Напишіть свій відгук..."></textarea>
+
+    <button class="btn-primary" onclick="addReview()">
+      <span data-ua="Надіслати відгук" data-pl="Wyślij opinię">Надіслати відгук</span>
+    </button>
+
+  </div>
+
+</div>
+
+
+<!--Фото робіт-->
 <div class="card">
   <h2 data-ua="Фото робіт" data-pl="Zdjęcia prac">Фото робіт</h2>
 
   <div class="gallery">
-    <img src="photo_2026-02-01_18-20-38.jpg">
-    <img src="photo_2026-02-01_18-18-26.jpg">
-    <img src="photo_2024-10-06_10-40-36.jpg">
+    <div class="photo-frame">
+      <img src="photo_2026-02-01_18-20-38.jpg">
+    </div>
+
+    <div class="photo-frame">
+      <img src="photo_2026-02-01_18-18-26.jpg">
+    </div>
+
+    <div class="photo-frame">
+      <img src="photo_2024-10-06_10-40-36.jpg">
+    </div>
   </div>
 </div>
-</div>
+
 
 <a href="https://wa.me/48576988871" class="whatsapp">WhatsApp</a>
 
@@ -118,6 +766,9 @@ function setLang(l){
   });
   uaBtn.classList.toggle("active",l==="ua");
   plBtn.classList.toggle("active",l==="pl");
+  if(document.getElementById("quizStep")){
+  renderQuiz();
+}
 }
 uaBtn.onclick=()=>setLang("ua");
 plBtn.onclick=()=>setLang("pl");
@@ -132,31 +783,272 @@ document.querySelectorAll('#stars span').forEach((s,i)=>{
   }
 });
 
+/* Відгуки */
+
 function addReview(){
   let name = document.getElementById("name").value;
   let text = document.getElementById("text").value;
   if(!name||!text||!rating)return alert("Заповніть все");
 
   let reviews=JSON.parse(localStorage.getItem("reviews")||"[]");
-  reviews.push({name,text,rating});
+  reviews.unshift({
+  name,
+  text,
+  rating,
+  date: new Date().toLocaleDateString()
+});
+
   localStorage.setItem("reviews",JSON.stringify(reviews));
   loadReviews();
 }
 
 function loadReviews(){
-  let reviews=JSON.parse(localStorage.getItem("reviews")||"[]");
-  let html="";
-  let sum=0;
+  const reviews = JSON.parse(localStorage.getItem("reviews") || "[]");
+  reviewsList.innerHTML = "";
+  currentSlide = 0;
+
   reviews.forEach(r=>{
-    sum+=r.rating;
-    html+=`<div class="review"><b>${r.name}</b><br>${"★".repeat(r.rating)}<br>${r.text}</div>`;
+    reviewsList.innerHTML += `
+      <div class="review-card">
+        <div class="review-header">
+          <span>${r.name}</span>
+          <span class="review-stars">${"★".repeat(r.rating)}</span>
+        </div>
+        <div>${r.text}</div>
+        <small>${r.date}</small>
+      </div>
+    `;
   });
-  document.getElementById("reviews").innerHTML=html;
-  document.getElementById("rating").innerText=
-    "⭐ "+(reviews.length?(sum/reviews.length).toFixed(1):"5.0");
+
+updateRatingStats(reviews);
+setTimeout(updateSlider,50);
+
 }
+
+function updateRatingStats(reviews){
+  if(reviews.length === 0){
+    document.getElementById("ratingNumber").innerText = "0.0";
+    document.getElementById("reviewsCount").innerText = "0";
+    return;
+  }
+
+  let total = 0;
+  let counts = {1:0,2:0,3:0,4:0,5:0};
+
+  reviews.forEach(r=>{
+    total += r.rating;
+    counts[r.rating]++;
+  });
+
+  const avg = (total / reviews.length).toFixed(1);
+  document.getElementById("ratingNumber").innerText = avg;
+  document.getElementById("reviewsCount").innerText = reviews.length + " відгуків";
+
+  for(let i=1;i<=5;i++){
+    const percent = (counts[i] / reviews.length) * 100;
+    document.getElementById("bar"+i).style.width = percent + "%";
+  }
+  let stars = "";
+  for(let i=1;i<=5;i++){
+  stars += i <= Math.round(avg) ? "★" : "☆";
+}
+document.getElementById("ratingStars").innerText = stars;
+
+}
+
+
+let quizData = {};
+let quizStep = 0;
+
+function renderQuiz(){
+  const container = document.getElementById("quizStep");
+
+  if(quizStep === 0){
+    container.innerHTML = `
+      <p>${lang === "ua" ? "Яка проблема?" : "Jaki problem?"}</p>
+      <button class="quiz-btn" onclick="nextQuiz('${lang==="ua"?"Відчувається холод або вітер з закритого вікна":"Wieje"}')">
+        ${lang === "ua" ? "Відчувається холод або вітер з закритого вікна" : "Wieje"}
+      </button>
+      <button class="quiz-btn" onclick="nextQuiz('${lang==="ua"?"Не відкривається або заблоковане вікно":"Okno się nie otwiera lub jest zablokowane"}')">
+        ${lang === "ua" ? "Не відкривається або заблоковане вікно" : "Okno się nie otwiera lub jest zablokowane"}
+      </button>
+            <button class="quiz-btn" onclick="nextQuiz('${lang==="ua"?"Не закривається до кінця ручка":"Klamka nie zamyka się całkowicie"}')">
+        ${lang === "ua" ? "Не закривається до кінця ручка" : "Klamka nie zamyka się całkowicie"}
+      </button>
+            <button class="quiz-btn" onclick="nextQuiz('${lang==="ua"?"Збирається конденсант на вікні":"Na oknie skrapla się para wodna."}')">
+        ${lang === "ua" ? "Збирається конденсант на вікні" : "Na oknie skrapla się para wodna."}
+      </button>
+      <button class="quiz-btn" onclick="nextQuiz('${lang==="ua"?"Розбите скло":"Stłuczona szyba"}')">
+        ${lang === "ua" ? "Розбите скло" : "Stłuczona szyba"}
+      </button>
+    `;
+  }
+
+  if(quizStep === 1){
+    container.innerHTML = `
+      <p>${lang === "ua" ? "Скільки вікон?" : "Ile okien?"}</p>
+      <button class="quiz-btn" onclick="nextQuiz('1-2')">1-2</button>
+      <button class="quiz-btn" onclick="nextQuiz('3-5')">3-5</button>
+      <button class="quiz-btn" onclick="nextQuiz('5+')">5+</button>
+    `;
+  }
+
+  if(quizStep === 2){
+    container.innerHTML = `
+      <p>${lang === "ua" ? "Ваш телефон" : "Twój telefon"}</p>
+      <input 
+        id="quizPhone" 
+        class="quiz-input" 
+        placeholder="+48XXXXXXXXX"
+        maxlength="12"
+        oninput="validatePhone(this)"
+      >
+      <small id="phoneError" style="color:red;display:none;">
+        ${lang === "ua" 
+          ? "Введіть правильний номер у форматі +48XXXXXXXXX" 
+          : "Wpisz poprawny numer w formacie +48XXXXXXXXX"}
+      </small>
+      <button class="btn" onclick="finishQuiz()">
+        ${lang === "ua" ? "Отримати розрахунок" : "Otrzymaj wycenę"}
+      </button>
+    `;
+  }
+
+  if(quizStep === 3){
+    container.innerHTML = `
+      <h3>✅ ${lang === "ua" 
+        ? "Дякую! Я скоро вам зателефоную" 
+        : "Dziękuję! Wkrótce zadzwonię"}</h3>
+    `;
+  }
+}
+
+let currentSlide = 0;
+
+function updateSlider(){
+  const track = document.querySelector(".reviews-track");
+  const cards = document.querySelectorAll(".review-card");
+  if(cards.length <= 3){
+    track.style.transform = "translateX(0)";
+    return;
+  }
+
+  const cardWidth = cards[0].offsetWidth + 20;
+  track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+}
+
+function nextReview(){
+  const cards = document.querySelectorAll(".review-card");
+  if(currentSlide < cards.length - 3){
+    currentSlide++;
+    updateSlider();
+  }
+}
+
+function prevReview(){
+  if(currentSlide > 0){
+    currentSlide--;
+    updateSlider();
+  }
+}
+
+
+function validatePhone(input){
+
+  input.value = input.value.replace(/[^\d+]/g, "");
+
+  if(input.value.startsWith("0")){
+    input.value = "+48" + input.value.substring(1);
+  }
+
+  if(!input.value.startsWith("+48")){
+    input.value = "+48";
+  }
+
+  let isValid = /^\+48\d{9}$/.test(input.value);
+
+  document.getElementById("phoneError").style.display = 
+    isValid ? "none" : "block";
+
+  input.style.borderColor = isValid ? "#ddd" : "red";
+
+  return isValid;
+}
+
+function nextQuiz(answer){
+  if(quizStep === 0) quizData.problem = answer;
+  if(quizStep === 1) quizData.count = answer;
+
+  quizStep++;
+  renderQuiz();
+}
+
+function finishQuiz(){
+  let phone = document.getElementById("quizPhone").value;
+  if(!phone){
+    alert("Введіть телефон");
+    return;
+  }
+
+  quizData.phone = phone;
+
+  let leads = JSON.parse(localStorage.getItem("leads") || "[]");
+  leads.push(quizData);
+  localStorage.setItem("leads", JSON.stringify(leads));
+
+  quizStep++;
+  renderQuiz();
+}
+
+renderQuiz();
+
+function openContactModal(){
+  document.getElementById("contactModal").style.display = "flex";
+}
+
+function closeContactModal(){
+  document.getElementById("contactModal").style.display = "none";
+}
+
+window.onclick = function(e){
+  const modal = document.getElementById("contactModal");
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+}
+
 loadReviews();
-</script
+</script>
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close" onclick="closeContactModal()">×</span>
+
+    <h3
+      data-ua="Оберіть спосіб зв'язку"
+      data-pl="Wybierz sposób kontaktu">
+      Оберіть спосіб зв'язку
+    </h3>
+
+    <a href="tel:+48576988871"
+       class="modal-btn">
+       📞 <span 
+       data-ua="Подзвонити"
+       data-pl="Zadzwoń">
+       Подзвонити</span>
+    </a>
+
+    <a href="https://wa.me/48576988871"
+       target="_blank"
+       class="modal-btn">
+       💬 <span 
+       data-ua="Написати в WhatsApp"
+       data-pl="Napisz na WhatsApp">
+       Написати в WhatsApp</span>
+    </a>
+
+  </div>
+</div>
+
 </body>
 </html>
-
