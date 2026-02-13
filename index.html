@@ -514,11 +514,33 @@ body{
   }
 
   .reviews-wrapper{
-    padding:0 45px; /* створюємо місце для кнопок */
+    padding:0 45px;
   }
 
 }
 
+  @media (max-width: 768px) {
+
+  .profile{
+    grid-template-columns: 1fr;
+    gap:20px;
+    text-align:center;
+  }
+
+  .profile img{
+    max-width:160px;
+    margin:0 auto;
+  }
+
+  .profile h1{
+    font-size:26px;
+  }
+
+  .btn-primary{
+    width:100%;
+    text-align:center;
+  }
+}
 
 </style>
 </head>
@@ -1094,4 +1116,5 @@ loadReviews();
 
 </body>
 </html>
+
 
